@@ -1,6 +1,7 @@
 package lib
 
 import (
+    "os"
     "fmt"
     "net/url"
     "net/http"
@@ -8,7 +9,7 @@ import (
     "encoding/json"
 )
 
-const ENDPOINT = "https://wekan.alicemacs.com"
+const ENDPOINT = os.Getenv("WEKAN_URL")
 
 type LoginResponse struct {
     Id string `json:"id,omitempty"`
