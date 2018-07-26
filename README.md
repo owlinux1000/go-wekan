@@ -1,6 +1,6 @@
 # GoWekan
 
-CLI tools for Wekan written by Golang
+CLI tool for Wekan written by Golang
 
 ## Features
 
