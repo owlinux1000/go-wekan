@@ -9,7 +9,7 @@ import (
     "encoding/json"
 )
 
-const ENDPOINT = os.Getenv("WEKAN_URL")
+var ENDPOINT = os.Getenv("WEKAN_URL")
 
 type LoginResponse struct {
     Id string `json:"id,omitempty"`
@@ -32,7 +32,6 @@ func Register(username string, password string, email string) LoginResponse {
     }
 
     body, err := ioutil.ReadAll(resp.Body)
-    fmt.Println(string(body))
     if err != nil {
         fmt.Println(err.Error())
     }
@@ -59,7 +58,6 @@ func Login(username string, password string) LoginResponse {
     }
 
     body, err := ioutil.ReadAll(resp.Body)
-    fmt.Println(string(body))
     if err != nil {
         fmt.Println(err.Error())
     }
